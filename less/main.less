@@ -1,0 +1,68 @@
+
+body{
+    color:#666;
+    font-family:"黑体","微软雅黑";
+}
+/*
+    nav {
+    border-bottom: 1px solid #ccc;
+    overflow: auto;
+    padding: 5px 0px;
+    a {
+        color:#666;
+        float:right;
+        padding-right:10px;
+        text-decoration:none;
+    }
+}
+*/
+
+footer{
+    height:40px;
+    border-top:1px solid #ccc;
+    bottom: 0;
+    width: 100%;
+    position:fixed;
+
+    & > div{
+        width:31%;
+        display: inline-block;
+        text-align: center;
+        padding-top:5px;
+    }
+    span{
+        font-size:12px;
+    } 
+    .img{
+        height:15px;
+        width:15px;
+        background-position: center center;
+        background-repeat:no-repeat;
+        background-size:contain;
+        margin: auto;
+    }
+    .shops{
+        .img{
+            background-image:url("../img/shop.png") ;
+        }
+        div.selected{
+            background-image:url("../img/shop-selected.png") ;
+        }
+    }
+    .orders{
+        .img{
+            background-image:url("../img/order.png");
+        }
+        div.selected{
+            background-image:url("../img/order-selected.png");
+        }
+    }
+    .mine{
+        .img{
+            background-image:url("../img/mine.png");
+        }
+        div.selected{
+            background-image:url("../img/mine-selected.png");
+        }
+    }
+}

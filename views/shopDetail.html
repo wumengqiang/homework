@@ -1,0 +1,42 @@
+<div id="shopDetail">
+    <nav class="menu">
+        <span ng-class="{active:menu==='service'}" ng-click="menu = 'service'">服务</span>
+        <span ng-class="{active:menu==='evaluation'}" ng-click='menu = "evaluation"'>评价</span>
+        <span ng-class="{active:menu==='shop'}" ng-click='menu = "shop"'>店铺</span>
+    </nav>
+    <div ng-switch on="menu">
+        <div class="service" ng-switch-when="service"> 
+            <div class="info">
+                <div class="item"  ng-repeat="service in services">
+                    <span class='name'>{{service.name}}</span>
+                    <span class='num'>{{'月'+service.orderNum+'单'}}</span>
+                    <span class='price'>{{'￥'+service.price}}</span>
+                </div>
+            </div>
+            <div class="operation">
+                <button class="order btn btn-sm btn-default" ui-sref="order">去预订</button>
+                <button class="pay btn btn-sm btn-default" ui-sref="pay">直接支付</button>
+            </div>
+        </div>
+        <div ng-switch-when="evaluation"> 
+            评价
+        </div>
+        <div ng-switch-when="shop"> 
+            店铺
+        </div>
+    </div>
+    <footer class="footerMenu">
+        <div class='shops' ui-sref='shops'>
+            <div class="img" ng-class="{selected:footerMenu==='shops'}"></div>
+            <span>店铺<span>
+        </div>
+        <div class="orders" ui-sref="orders">
+            <div class="img" ng-class="{selected:footerMenu==='orders'}"></div>
+            <span>订单<span>
+        </div>
+        <div class="mine" ui-sref="mine">
+            <div class="img" ng-class="{selected:footerMenu==='mine'}"></div>
+            <span>我的<span>
+        </div>
+    </footer>
+</div>

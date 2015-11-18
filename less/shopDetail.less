@@ -1,0 +1,54 @@
+#shopDetail{
+    .menu{
+        border-bottom:1px solid #ccc;
+        span{
+            width: 31%;
+            display: inline-block;
+            text-align: center;
+            box-sizing:border-box;
+            padding:6px 0 4px 0;
+        }
+        .active{
+            color: #ff6633;
+            border-bottom:2px solid #ff6633; 
+        }
+    }
+    .service{
+        .info{
+            border-bottom:1px solid #eee;
+            .item{
+                margin-left:12px;
+                height:40px;
+                span{
+                    line-height:40px;
+                }
+                .name{
+                    color: #333;
+                }
+                .num{
+                    color: #999;
+                    font-size:12px;
+                    padding-left: 10px;
+                }
+                .price{
+                    float:right;
+                    padding-right:40px;
+                }
+            }
+            .item + .item{
+                border-top:1px solid #eee;
+            }
+        }
+        .operation{
+            text-align:center;
+            margin-top:15px;
+            .pay{
+                margin-left:15px;
+            }
+            .order{
+                margin-right:15px;
+            }
+        }
+    }
+
+}

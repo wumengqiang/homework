@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="barbershop">
+<head>
+  <title>angular学习</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" type="text/css" href="/angular/vendor/bootstrap/dist/css/bootstrap.min.css">
+  <script src = "/angular/js/jquery.min.js" ></script>
+  <script src="/angular/vendor/angular/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script src = "/angular/js/controller.js" ></script>
+  <link rel="stylesheet" type="text/less" href="/angular/less/main.less">
+  <link rel="stylesheet" type="text/less" href="/angular/less/shopDetail.less">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+</head>
+<body>
+   <!-- <nav ng-controller="AuthControl">
+        <a ui-sref="login" ng-show="!logined">登录</a>
+        <a ui-sref="setting" ng-show="logined">{{name}}</a>
+    </nav>-->
+    <div class="main" ui-view></div>
+</body>
+</html>
