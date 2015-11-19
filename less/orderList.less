@@ -1,0 +1,41 @@
+@border:1px solid #eee;
+#orderList {
+    & > div:after {
+        content: ' ';
+        display: block;
+        height: 8px;
+        background-color: #f4f4f4;
+    }
+    & > div{
+        border-bottom: @border ;
+        border-top: @border;
+        position:relative;
+        & > span:first-child {
+            margin-left: 12px;
+            padding-top: 5px;
+            display: block;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        } 
+        .name, .type, .duration {
+            display: block;
+            margin-left: 12px;
+            color:#999;
+            font-size:12px;
+        }
+        .type{
+            padding-top:3px;
+        }
+        .status{
+            position:absolute;
+            font-size:12px;
+            right:12px;
+            top:5px;
+            color:#999;
+        }
+        .unchecked{
+            color:#ff6633;
+        }
+        
+    }
+}

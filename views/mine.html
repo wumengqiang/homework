@@ -1,0 +1,36 @@
+
+<div id="mine">
+    <div class="notlogin" ui-sref="login" ng-show="!auth.logined">
+        <div>
+            <span>未登录，点击登陆</span>
+            <img class="arrow" src="./img/arrow.png" />
+        </div>
+    </div>
+    <div class="barbershop" ng-show="auth.logined===true && auth.info.type==='barbershop'">
+        <div class="name" ui-sref="mineName({name:'name'})">
+            <span class="key" >店铺名称</span>
+            <img class="arrow" src="./img/arrow.png" />
+            <span class="value">{{auth.info.name}}</span>
+        </div>
+        <div class='service' ui-sref="mineService">
+            <span class="key">服务</span>
+            <img class="arrow" src="./img/arrow.png" />
+            <span class="value">{{auth.services.length+'项'}}</span>
+        </div>
+        <div class='school' ui-sref="mineName({name:'school'})">
+            <span class="key">附近学校</span>
+            <img class="arrow" src="./img/arrow.png" />
+            <span class="value">{{auth.info.school}}</span>
+        </div>
+        <div class='address' ui-sref="mineName({name:'address'})">
+            <span class="key">地址</span>
+            <img class="arrow" src="./img/arrow.png" />
+            <span class="value">{{auth.info.address}}</span>
+        </div>
+        <div class='phoneNum' ui-sref="mineName({name:'phoneNum'})">
+            <span class="key">手机</span>
+            <img class="arrow" src="./img/arrow.png" />
+            <span class="value">{{auth.info.phoneNum}}</span>
+        </div>
+    </div>
+</div>

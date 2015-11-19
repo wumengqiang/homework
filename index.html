@@ -12,6 +12,8 @@
   <script src = "/angular/js/controller.js" ></script>
   <link rel="stylesheet" type="text/less" href="/angular/less/main.less">
   <link rel="stylesheet" type="text/less" href="/angular/less/shopDetail.less">
+  <link rel="stylesheet" type="text/less" href="/angular/less/orderList.less">
+  <link rel="stylesheet" type="text/less" href="/angular/less/mine.less">
   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 </head>
 <body>
@@ -20,5 +22,19 @@
         <a ui-sref="setting" ng-show="logined">{{name}}</a>
     </nav>-->
     <div class="main" ui-view></div>
+    <footer class="footerMenu">
+        <div class='shops' ui-sref='shops'>
+            <div class="img" ng-class="{selected:$state.$current.name.indexOf('shop') >= 0}"></div>
+            <span>店铺<span>
+        </div>
+        <div class="orders" ui-sref="orders({id:auth.$userId})">
+            <div class="img" ng-class="{selected:$state.current.name.indexOf('orders')>=0}"></div>
+            <span>订单<span>
+        </div>
+        <div class="mine" ui-sref="mine">
+            <div class="img" ng-class="{selected:$state.current.name.indexOf('mine')>=0}"></div>
+            <span>我的<span>
+        </div>
+    </footer>
 </body>
 </html>

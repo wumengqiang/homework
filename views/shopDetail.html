@@ -18,25 +18,30 @@
                 <button class="pay btn btn-sm btn-default" ui-sref="pay">直接支付</button>
             </div>
         </div>
-        <div ng-switch-when="evaluation"> 
-            评价
+        <div class="evaluation" ng-switch-when="evaluation"> 
+            <div class="info">
+                <div class="item" ng-repeat="evaluation in evaluations">
+                    <div>
+                        <span class="name">{{evaluation.name}}</span>
+                        <span class="time">{{evaluation.addTime}}</span>
+                    </div>
+                    <div class="evas">
+                        <span>{{"环境：" + evaluation.enviGrade + "分"}}</span>
+                        <span>{{"态度：" + evaluation.attiGrade + "分"}}</span>
+                        <span>{{"发型：" + evaluation.hairGrade + "分"}}</span>
+                        <p>{{"评论："+evaluation.evaText}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div ng-switch-when="shop"> 
-            店铺
+        <div class="shopinfo" ng-switch-when="shop"> 
+            <div class="info">
+                <span class="name">{{info.name}}</span>
+                <span class="orderNum">{{"月" + info.orderNum + "单"}}</span>
+                <span class="grade">{{"评分：" + info.grade}}</span>
+                <span class="address">{{'地址：' + info.address}}</span>
+                <span class="phoneNum">{{'手机：' + info.phoneNum}}</span>
+            </div>
         </div>
     </div>
-    <footer class="footerMenu">
-        <div class='shops' ui-sref='shops'>
-            <div class="img" ng-class="{selected:footerMenu==='shops'}"></div>
-            <span>店铺<span>
-        </div>
-        <div class="orders" ui-sref="orders">
-            <div class="img" ng-class="{selected:footerMenu==='orders'}"></div>
-            <span>订单<span>
-        </div>
-        <div class="mine" ui-sref="mine">
-            <div class="img" ng-class="{selected:footerMenu==='mine'}"></div>
-            <span>我的<span>
-        </div>
-    </footer>
 </div>

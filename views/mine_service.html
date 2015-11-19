@@ -1,0 +1,14 @@
+<div id="mine">
+    <div class="setting_service" ng-repeat="service in services" >
+        <label>名称</label>
+        <input type='text' ng-model="service.name" class='name' required/>
+        <label>价格</label>
+        <input type='text' ng-model="service.price" required class='price' />
+        <button class="btn btn-default btn-xs" ng-click="removeService($index)">删除</button>
+    </div>
+    <div class="operation">
+        <button class="btn btn-default btn-sm" ng-click="addService()">添加</button>
+        <button class="btn btn-default btn-sm" ng-click="submit()">保存</button>
+        <button class="btn btn-default btn-sm" ng-click="cancel()">取消</button>
+    </div>
+</div>
