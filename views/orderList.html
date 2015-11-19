@@ -1,5 +1,5 @@
 <div id="orderList">
-    <div class="item"  ng-repeat="order in orders" ui-sref={{"/orders/"+order.id}} >
+    <div class="item"  ng-repeat="order in orders"} >
         <span>{{order.shopName}}</span>
         <span class="type">{{"类型：" + order.type}}</span>
         <span class="name">{{"顾客：" + order.name[0]+"**"}}</span>
@@ -7,7 +7,10 @@
         <span ng-switch on="order.status">
             <span class="status" ng-switch-when='admited'>已同意</span>
             <span class="status" ng-switch-when='refused'>已拒绝</span>
-            <span class="unchecked status" ng-switch-when='unchecked'>未处理</span>
+            <div class="unchecked status" ng-switch-when='unchecked'>
+                <button ng-click="refuse($index)" class="btn btn-default btn-xs">同意</button>
+                <button ng-click="admit($index)"class="btn btn-default btn-xs">拒绝</button>
+            </div>
         </span>
     </div>
 </div>

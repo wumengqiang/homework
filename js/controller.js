@@ -144,6 +144,30 @@
                         {id:4,name:"刘**",duration:"8:00 - 10:00",type:"剪发",status:"admited",shopName:"根爷店铺"},
                         {id:5,name:"黄**",duration:"8:00 - 10:00",type:"剪发",status:"admited",shopName:"根爷店铺"},
                     ];
+                    $scope.refuse = function(index){
+                         $http({
+                            method:"POST",
+                            url:"/api/orders/"+$scope.orders[index].id,
+                            data:JSON.stringify({'operation':"refused"}),
+                            headers:{
+                                "Content-Type":"application/json",
+                            }
+                        }).then(function successCallback(data){
+                        },function errorCallback(data){
+                        });
+                    };
+                    $scope.admit = function(index){
+                         $http({
+                            method:"GET",
+                            url:"/api/orders/"+$scope.orders[index].id,
+                            data:JSON.stringify({'operation':"refused"}),
+                            headers:{
+                                "Content-Type":"application/json",
+                            }
+                        }).then(function successCallback(data){
+                        },function errorCallback(data){
+                        });
+                    };
                     if($rootScope.auth.logined){
                          $http({
                             method:"GET",
@@ -155,7 +179,7 @@
                         },function errorCallback(data){
                         });
                     }
-                                   
+                           
                 }],
             })
             .state("mine",{
@@ -166,7 +190,7 @@
                 }],
             })
             .state("mineName",{
-                url:"/mine/{name:[A-Za-z]{1,12}}",
+                url:"/mine/item/{name:[A-Za-z]{1,12}}",
                 templateUrl:"views/mine_name.html",
                 controller:['$scope', '$setting', '$rootScope',function($scope, $setting, $rootScope){
                     $scope.name = $rootScope.auth.info[$rootScope.$stateParams.name];
