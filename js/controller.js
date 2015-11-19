@@ -72,6 +72,32 @@
     barbershop.config(function($stateProvider,$urlRouterProvider){
             $urlRouterProvider.otherwise("/orders"); 
             $stateProvider
+                .state("shopSearch",{
+                    url:"/shops/search",
+                    templateUrl:"views/shopSearch.html",
+                    controller:['$scope','$rootScope',function($scope,$rootScope){
+                        $scope.searchText = ""; 
+                        $scope.search = function(){
+                            if($scope.searchText === ""){
+                                alert("搜索内容不能为空");
+                                return;
+                            } 
+                            if($scope.searchText.length >20){
+                                alert('搜索内容长度不能超过20');
+                                return;
+                            }
+                            $rootScope.$state.go('shopList',{"searchText":$scope.searchText});
+                        }
+                    }],
+                })
+                .state("shopList",{
+                    url:"/shops/{searchText:.{1,20}}",
+                    templateUrl:"views/shopList.html",
+                    controller:['$scope','$rootScope',function($scope,$rootScope){
+                         
+                    }],
+                })
+                        
                 .state("shop",{
                     url:"/shop/{id:[0-9]{1,15}}",
                     templateUrl:"views/shopDetail.html",
