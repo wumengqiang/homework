@@ -45,7 +45,7 @@
                         {id:3,name:"烫发",price:"25",orderNum:100},
                     ],
                     info : {
-                        type:"barbershop",
+                        type:"customer",
                         name:"南北理发店",
                         grade:4.5,
                         school:"北京邮电大学",
@@ -229,6 +229,11 @@
                         )
                     
                     };    
+                    $scope.clickstar = function(type,index){
+                        type += "Grade";
+                        $scope.evaluation[type] = index;
+                    };
+
                 }]
             })
             .state("orders",{//订单
