@@ -1,0 +1,23 @@
+
+<div id="appointment">
+    <div class="item">
+        <label>预约项</label>
+        <select class="type" ng-model="selectedType">
+            <option value={{service.id}} ng-repeat="service in services">{{service.type + ' (￥'+service.price+')'}} </option>
+        </select>
+    </div>
+
+    <div class="item">
+        <label>预约时间</label>
+        <select class="time" ng-model="selectedTime">
+            <option value="8:00~10:00">8:00~10:00</option>
+            <option value="10:00~12:00">10:00~12:00</option>
+            <option value="12:00~14:00">12:00~14:00</option>
+            <option value="14:00~16:00">14:00~16:00</option>
+            <option value="16:00~18:00">16:00~18:00</option>
+            <option value="18:00~20:00">18:00~20:00</option>
+            <option value="20:00~22:00">20:00~22:00</option>
+        </select>
+    </div>
+    <button class="btn btn-primary btn-sm" ng-click="pay()">支付</button>
+</div>

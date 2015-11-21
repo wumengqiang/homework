@@ -1,0 +1,84 @@
+
+
+<div id="evaluation">
+    <div style="margin:5% 5%;border:none">
+        您对「{{projectname}}」还满意吗？不妨评价一下吧？
+    </div>
+    <div class="form-group">
+                    <span style="position:relative;top:3px">店铺环境&nbsp&nbsp</span>
+                    <a href="#" id="envi-1"   ng-click=clickstar("envi",1) title="惨不忍睹" >
+                        <img ng-show="evaluation.enviGrade>0" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.enviGrade<1" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="envi-2"  ng-click=clickstar("envi",2) title="懒惰" >
+                        <img ng-show="evaluation.enviGrade>1" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.enviGrade<2" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="envi-3"  ng-click=clickstar("envi",3) title="内容基础" >
+                        <img ng-show="evaluation.enviGrade>2" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.enviGrade<3" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="envi-4"  ng-click=clickstar("envi",4) title="内容容易理解" >
+                        <img ng-show="evaluation.enviGrade>3" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.enviGrade<4" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="envi-5"  ng-click=clickstar("envi",5) title="专家啊" >
+                        <img ng-show="evaluation.enviGrade>4" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.enviGrade<5" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <font color="#41A317" style="position:relative;top:3px" id="envi-6"></font>
+            </div>
+            <div class="form-group">
+                    <span style="position:relative;top:3px">服务态度&nbsp&nbsp</span>
+                    <a href="#" id="atti-1"  ng-click='clickstar("atti",1)' title="还不如我来" >
+                        <img ng-show="evaluation.attiGrade>0" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.attiGrade<1" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="atti-2"  ng-click='clickstar("atti",2)' title="有时给我添乱" >
+                        <img ng-show="evaluation.attiGrade>1" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.attiGrade<2" src="img/img-full-star.png" width="7%"/>
+                        <img src="{% static "images/img-full-star-grey.png" %}" width=7%   border="none">
+                    </a>
+                    <a href="#" id="atti-3"  ng-click='clickstar("atti",3)' title="正常的节奏" >
+                        <img ng-show="evaluation.attiGrade>2" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.attiGrade<3" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="atti-4"  ng-click='clickstar("atti",4)' title="需求稳妥" >
+                        <img ng-show="evaluation.attiGrade>3" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.attiGrade<4" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="atti-5"  ng-click='clickstar("atti",5)' title="工作超级顺畅" >
+                        <img ng-show="evaluation.attiGrade>4" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.attiGrade<5" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <font color="#41A317" style="position:relative;top:3px" id="atti-6"> </font>
+            </div>
+            <div class="form-group">
+                    <span style="position:relative;top:3px">发型评分&nbsp&nbsp</span>
+                    <a href="#" id="hair-1"  ng-click='clickstar("hair",1)' title="没法沟通" >
+                        <img ng-show="evaluation.hairGrade>0" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.hairGrade<1" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="hair-2"  ng-click='clickstar("hair",2)' title="不会说话" >
+                        <img ng-show="evaluation.hairGrade>1" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.hairGrade<2" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="hair-3"  ng-click='clickstar("hair",3)' title="没啥感觉" >
+                        <img ng-show="evaluation.hairGrade>2" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.hairGrade<3" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="hair-4"  ng-click='clickstar("hair",4)' title="很亲切" >
+                        <img ng-show="evaluation.hairGrade>3" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.hairGrade<4" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <a href="#" id="hair-5"  ng-click='clickstar("hair",5)' title="被TA感化了" >
+                        <img ng-show="evaluation.hairGrade>4" src="img/img-full-star.png" width="7%"/>
+                        <img ng-show="evaluation.hairGrade<5" src="img/img-full-star.png" width="7%"/>
+                    </a>
+                    <font color="#41A317" style="position:relative;top:3px" id="hair-6"></font>
+            </div>
+            <div class="form-group" style="margin-top:6%">
+                 <textarea rows="4" cols="20" class="form-control" style="box-shadow:none;color:#333" id="eva_content" name="eva_content" placeholder="您的评价很重要！来点评一下吧" required></textarea>
+            </div>
+
+</div>

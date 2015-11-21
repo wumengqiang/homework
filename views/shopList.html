@@ -1,2 +1,12 @@
-
+<div id="shopList">
+    <div class="item" ui-sref='shop({id:shop.id})' ng-repeat="shop in shopList">
+        <div class="name">{{shop.name}}</div>
+        <div >
+            <span class="score">{{'评分：'+shop.eva_score}}</span>
+            <span class="orderNum">{{'月'+shop.orderNum +'单'}}</span>
+        </div>
+        <p class="address">{{shop.address}}</p>
+        <img class="arrow" src="./img/arrow.png" />
+    </div>
+</div>
 

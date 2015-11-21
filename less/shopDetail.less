@@ -13,7 +13,24 @@
     }
 }
 
-
+#shopList{
+    .item{
+        padding-left: 12px;
+        position: relative;
+        padding-top: 5px;
+        border-bottom: 1px solid #f4f4f4;
+        .score,.address, .orderNum{
+            font-size:12px;
+            color:#999;
+        }
+        img.arrow {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            margin-top: -8px;
+        }
+    }
+}
 
 
 #shopDetail{
@@ -115,6 +132,31 @@
                 display:block;
             }
         }
+    }
+
+}
+#appointment{
+   .item{
+        position:relative;
+        padding:12px;
+        margin:10px;
+        label{
+            position: absolute;
+            top: 16px;
+        }
+
+        select{
+            width:50%;
+            margin-left:70px;
+        }
+   }  
+    button{
+        display: block;
+        width: 80%;
+        margin-left: 10%;
+        position: absolute;
+        top: 50%;
+        margin-top: 50px;
     }
 
 }

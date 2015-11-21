@@ -5,11 +5,22 @@
         <span class="name">{{"顾客：" + order.name[0]+"**"}}</span>
         <span class="duration">{{'时间：' + order.duration}}</span>
         <span ng-switch on="order.status">
-            <span class="status" ng-switch-when='admited'>已同意</span>
+            <div ng-switch-when="admited"> 
+                <span  ng-show="auth.info.type==='barbershop'" class="status">已同意</span>
+                <button class="btn btn-default btn-xs status" ng-show="auth.info.type==='customer'" ng-click="confirmPay($index)">确认付款</span>
+            </div>
+            <div ng-switch-when="confirmHairCut">
+                <span  ng-show="auth.info.type==='barbershop'" class="status">已付款</span>
+                <button class="btn btn-default btn-xs status" ng-show="auth.info.type==='customer'" ui-sref="evaluation({orderId:order.id})">评价</span>
+            </div>
             <span class="status" ng-switch-when='refused'>已拒绝</span>
-            <div class="unchecked status" ng-switch-when='unchecked'>
-                <button ng-click="refuse($index)" class="btn btn-default btn-xs">同意</button>
-                <button ng-click="admit($index)"class="btn btn-default btn-xs">拒绝</button>
+            <span class="status" ng-switch-when='evaluated'>已评价</span>
+            <div class="unchecked" ng-switch-when='unchecked'>
+                <div class="status" ng-show="auth.info.type==='barbershop'" >
+                    <button ng-click="refuse($index)" class="btn btn-default btn-xs">同意</button>
+                    <button ng-click="admit($index)"  class="btn btn-default btn-xs">拒绝</button>
+                </div>
+                <span class="status" ng-show="auth.info.type==='customer'" >等待确认</span>
             </div>
         </span>
     </div>
